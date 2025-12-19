@@ -1,6 +1,6 @@
 {
   "name": "@wemak4u/feel-editor-base",
-  "version": "1.10.1",
+  "version": "1.0.0",
   "description": "Editor for FEEL expressions.",
   "files": [
     "dist"
