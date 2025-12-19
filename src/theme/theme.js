@@ -60,6 +60,9 @@ export const highlightTheme = EditorView.baseTheme({
   },
   '& .control': {
     color: '#708'
+  },
+  '& .comment': {
+    color: '#940'
   }
 });
 
@@ -73,6 +76,7 @@ export const syntaxClasses = syntaxHighlighting(
     { tag: t.function(t.variableName), class: 'function' },
     { tag: t.function(t.special(t.variableName)), class: 'function' },
     { tag: t.controlKeyword, class: 'control' },
-    { tag: t.operatorKeyword, class: 'control' }
+    { tag: t.operatorKeyword, class: 'control' },
+    { tag: t.comment, class: 'comment' }
   ])
 );

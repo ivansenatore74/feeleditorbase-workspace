@@ -2,6 +2,8 @@ import { syntaxTree } from '@codemirror/language';
 import { snippetCompletion } from '@codemirror/autocomplete';
 import { isEmpty, isPathExpression, isVariableName } from './util';
 
+import { markdownInfo } from '../marked';
+
 /**
  * @typedef { import('../core').Variable } Variable
  * @typedef { import('@codemirror/autocomplete').CompletionSource } CompletionSource
@@ -71,7 +73,7 @@ function getVariableSuggestions(variables, builtins) {
 
  * @returns {import('@codemirror/autocomplete').Completion}
  */
-function createVariableSuggestion(variable, boost) {
+export function createVariableSuggestion(variable, boost) {
   if (variable.type === 'function') {
     return createFunctionVariable(variable, boost);
   }
@@ -79,7 +81,7 @@ function createVariableSuggestion(variable, boost) {
   return {
     label: variable.name,
     type: 'variable',
-    info: variable.info,
+    info: markdownInfo(variable.info),
     detail: variable.detail,
     boost
   };
@@ -114,7 +116,7 @@ function createFunctionVariable(variable, boost) {
   return snippetCompletion(template, {
     label,
     type: 'function',
-    info,
+    info: markdownInfo(info),
     detail,
     boost
   });

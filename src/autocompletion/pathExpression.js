@@ -1,6 +1,8 @@
 import { syntaxTree } from '@codemirror/language';
 import { isPathExpression } from './util';
 
+import { createVariableSuggestion } from './variable';
+
 /**
  * @typedef { import('../core').Variable } Variable
  * @typedef { import('@codemirror/autocomplete').CompletionSource } CompletionSource
@@ -51,12 +53,7 @@ export function pathExpressionCompletion({ variables }) {
 
     if (!options) return;
 
-    options = options.map(v => ({
-      label: v.name,
-      type: 'variable',
-      info: v.info,
-      detail: v.detail
-    }));
+    options = options.map(v => createVariableSuggestion(v));
 
     const result = {
       from: from,
