@@ -19,11 +19,8 @@
     "start": "cross-env SINGLE_START=true npm run dev",
     "start:camunda": "cross-env SINGLE_START=camunda npm run dev",
     "dev": "npm test -- --auto-watch --no-single-run",
-    "prepare": "run-s build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bpmn-io/feel-editor.git"
+    "prepare": "run-s build",
+    "pack": "npm pack --pack-destination=\"./pack\""
   },
   "publishConfig": {
     "access": "public"
@@ -44,6 +41,9 @@
     {
       "name": "bpmn.io contributors",
       "url": "https://github.com/bpmn-io"
+    },
+    {
+      "name": "Ivan Senatore"
     }
   ],
   "license": "MIT",
