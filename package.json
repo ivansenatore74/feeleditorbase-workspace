@@ -6,12 +6,13 @@
     "dist"
   ],
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "module": "dist/index.es.js",
   "scripts": {
     "all": "run-s lint test build",
     "compile:builtins": "node scripts/compileBuiltins.js",
     "test": "karma start",
-    "build": "rollup -c --bundleConfigAsCjs",
+    "build": "rollup -c --bundleConfigAsCjs && node copy-types.cjs",
     "build:watch": "npm run build -- -w",
     "builtins": "run-s pull:platform-docs compile:builtins",
     "lint": "eslint .",
@@ -57,8 +58,8 @@
     "@codemirror/view": "^6.36.2",
     "@lezer/highlight": "^1.2.1",
     "lang-feel": "^2.3.0",
-    "min-dom": "^4.2.1",
-    "marked": "15.0.7"
+    "marked": "15.0.7",
+    "min-dom": "^4.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
