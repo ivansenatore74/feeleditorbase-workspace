@@ -9,6 +9,8 @@ declare module '@wemake4u/feel-editor-base' {
   export interface FeelFunctionParam {
     name: string;
     type?: string;
+    optional?: boolean;
+    varArgs?: boolean;
   }
 
   export type FeelEntry = FeelVariable | FeelFunction;
