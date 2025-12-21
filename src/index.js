@@ -11,6 +11,7 @@ import theme from './theme';
 import * as Core from './core';
 
 import { camunda as camundaBuiltins } from './builtins';
+import { autoBlockComment } from './comments/blockComment';
 
 /**
  * @typedef { import('./core').Variable } Variable
@@ -123,6 +124,7 @@ export default function FeelEditor({
     tooltipLayout,
     placeholderConf.of(placeholderExt(placeholder)),
     theme,
+    autoBlockComment,
     ...editorExtensions
   ];
 
