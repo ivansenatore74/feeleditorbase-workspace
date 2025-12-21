@@ -1,5 +1,5 @@
-import camundaTags from './camunda.json';
+import builtInTags from './builtIn.json';
 
 import { parseBuiltins } from './util';
 
-export const camunda = parseBuiltins(camundaTags);
+export const camunda = parseBuiltins(builtInTags);
