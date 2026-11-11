@@ -12,6 +12,13 @@
 - Do not add this package back as a dependency anywhere, and do not merge upstream changes here: if an upstream
   fix of `@bpmn-io/feel-editor` is needed, port it into feeleditor-workspace.
 
+## Remaining consumer (checked 2026-11-11)
+
+- `@wemake4u/form-editor` 1.0.17 (`C:\Repos\formeditor-workspace\projects\form-editor`, not yet published) still
+  depends on `@wemake4u/feel-editor-base` **1.0.2** (pinned). It must move off this package (to the FEEL core in
+  feeleditor-workspace) before the retirement is complete; form-designer 2.0.0 waits for form-editor 1.0.17.
+- Last version on npm: 1.0.3 (2026-10-12).
+
 ## Retirement steps (planned; check what is already done)
 
 1. Archive notice at the top of `README.md` on branch `fix/v1.10.1-custom`, pointing to feeleditor-workspace.
