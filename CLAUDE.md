@@ -1,0 +1,26 @@
+# CLAUDE.md — feeleditorbase-workspace (RETIRED)
+
+**This repository is retired. Do not develop here.**
+
+## Status
+
+- `@wemake4u/feel-editor-base` was a fork of `@bpmn-io/feel-editor` v1.10.1 (upstream stopped at commit
+  `2f7eda1`), with custom fixes on branch `fix/v1.10.1-custom`.
+- It was used only by `@wemake4u/feel-editor`. In October 2026 (feel-editor v2.1.0) its code was ported to
+  TypeScript and merged into `C:\Repos\feeleditor-workspace` (`projects/feel-editor/src/lib/feel/`), and the fork
+  was detached from upstream. All further work on the FEEL editor core happens there.
+- Do not add this package back as a dependency anywhere, and do not merge upstream changes here: if an upstream
+  fix of `@bpmn-io/feel-editor` is needed, port it into feeleditor-workspace.
+
+## Retirement steps (planned; check what is already done)
+
+1. Archive notice at the top of `README.md` on branch `fix/v1.10.1-custom`, pointing to feeleditor-workspace.
+2. Tag the final state.
+3. On GitHub, set the default branch to `fix/v1.10.1-custom` (it is still `main`, which holds upstream bpmn.io
+   code, not the fork).
+4. Archive the GitHub repository (Settings or `gh repo archive`).
+5. Local folder: rename it first, delete it later; for long-path errors on Windows use the `robocopy` empty-folder
+   mirror workaround.
+
+Before deleting anything, verify there is no unpushed work (`git status`, `git log origin/fix/v1.10.1-custom..`,
+`git stash list`).
